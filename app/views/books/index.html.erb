@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+
+
+<!-- insert a h2 selection of genres here -->
+
+<div class="row">
+  <% @books.each do |book| %>
+      <div class="panel panel-default col-md-4">
+        <div class="panel-heading">
+          <div class="pull-right">
+            <%= image_tag book.avatar.url(:thumb) %>
+          </div>
+          <h3><%= link_to book.title.titleize, book %></h3>
+          <h4>by <%= book.author.titleize %></h4>
+        </div>
+        <div class="panel-body">
+          <p><%= truncate(book.summary,length:125,separator:' ') %></p>
+          <p><%= link_to 'Read more', book %> </p>
+          <p><%= book.avg_rating %> out of 5.0</p>
+        </div>
+        <% if current_user == book.user %>
+          <div class="panel-footer">
+            <%= link_to 'Edit', edit_book_path(book), class:"btn btn-default" %>
+            <%= link_to 'Delete', book, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %>
+          </div>
+        <% end %>
+    </div>
+  <% end %>
+</div>
