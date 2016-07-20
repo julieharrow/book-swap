@@ -15,6 +15,7 @@
  */
 
 body {
+  background-color:#D3984B;
   background: url(book_fan.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -24,8 +25,4 @@ body {
 
 .opaqueContainer {
   background-color:white;
-}
-.book_cover {
-
-
 }
