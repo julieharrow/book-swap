@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :books
   root 'books#index'
 
-  get 'my_books' => 'books#my_books'
+  get 'books' => 'books#my_books'
 
 
 
