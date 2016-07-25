@@ -26,3 +26,7 @@ body {
 .opaqueContainer {
   background-color:white;
 }
+
+.book-thumb {
+  max-height:100px;
+}

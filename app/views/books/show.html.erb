@@ -13,6 +13,7 @@
       <p><%= @book.summary %></p>
       <p><strong>Average Rating:  </strong><%= @book.avg_rating %> out of 5.0</p>
     </div>
+    <!-- ???? -->
     <% if current_user == @book.user %>
       <div class="panel-footer">
         <%= link_to 'Edit', edit_book_path(book), class:"btn btn-default" %>

@@ -9,7 +9,11 @@
       <div class="panel panel-default col-md-4">
         <div class="panel-heading">
           <div class="pull-right">
-            <%= image_tag book.avatar.url(:thumb) %>
+            <% if book.avatar.exists? %>
+              <%= image_tag book.avatar.url(:thumb) %>
+            <% else %>
+              <%= image_tag "book_cover.jpg", class:"book-thumb"%>
+            <% end %>
           </div>
           <h3><%= link_to book.title.titleize, book %></h3>
           <h4>by <%= book.author.titleize %></h4>
